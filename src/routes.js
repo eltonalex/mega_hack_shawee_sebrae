@@ -9,6 +9,10 @@ const VendedorController = require('./controllers/VendedorController');
 
 const routes = Router();
 
+routes.get('/', function(request, response){
+    return response.send('<h2>Projeto Mega Hack - Desafio Proposto pelo SEBRAE</h2>');
+} );
+
 routes.get('/usuario', UsuarioController.lista);
 
 routes.post('/usuario', UsuarioController.cadastra);

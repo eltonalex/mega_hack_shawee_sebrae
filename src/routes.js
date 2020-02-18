@@ -23,6 +23,8 @@ routes.delete('/usuario/:id', UsuarioController.apaga);
 
 routes.get('/vendedor', VendedorController.lista);
 
+routes.get('/vendedor/:nome', VendedorController.listaUm);
+
 routes.post('/vendedor', VendedorController.cadastra);
 
 routes.put('/vendedor/:id', VendedorController.atualiza);

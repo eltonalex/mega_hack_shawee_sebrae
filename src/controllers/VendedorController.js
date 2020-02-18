@@ -14,6 +14,19 @@ module.exports = {
         });
     },
 
+    async listaUm(request, response) {
+        const nome =  request.params.nome;
+
+        await Vendedor.find({nome}, function(err, vendedor) {
+            if (!err){ 
+                console.log(vendedor);
+                return response.json(vendedor);
+                process.exit();
+            } else {throw err;}
+        });
+    },
+
+
     async cadastra(request, response) {
     
         try {
@@ -25,13 +38,9 @@ module.exports = {
 
             for (var x in servicosReq) {
                 vendedorVendas.push(servicosReq[x]);
-            }
-
-            if( await Vendedor.findOne({ nome }))
-                
-                return response.status(400).send({ error: 'Usuário já existe.' });        
+            }  
         
-                const vendedor = await Vendedor.create({
+            const vendedor = await Vendedor.create({
                     nome,
                     vendas:vendedorVendas,                
             });

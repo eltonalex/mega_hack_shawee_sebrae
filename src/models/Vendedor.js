@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const VendaSchema =  new mongoose.Schema({
     nome: String,
     descricao: String,
+    quantidade: Number,
     preco: Number,
  })
 

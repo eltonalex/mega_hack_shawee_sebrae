@@ -19,7 +19,7 @@ module.exports = {
         const { nome , email, senha , tipoUsuario="P"} = request.body;
     
         try {
-            //A - Administrador, E - Editor, P - Pesquisador
+            //A - Administrador, V - Vendedor
             
             if( await Usuario.findOne({ email }))
                 return response.send(400).send({ error: 'Usuário já existe.' });        

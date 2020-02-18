@@ -5,6 +5,10 @@ const VendaSchema =  new mongoose.Schema({
     descricao: String,
     quantidade: Number,
     preco: Number,
+    createdAt : {
+        type:Date,
+        default:Date.now,
+    },
  })
 
 
